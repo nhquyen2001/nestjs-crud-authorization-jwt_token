@@ -6,6 +6,7 @@ import { AuthService } from './auth.service';
 @Injectable()
 export class LocalStrategy extends PassportStrategy(Strategy) {
   constructor(private authService: AuthService) {
+    // override usernameField (usernameField -> email)
     super({ usernameField: 'email' });
   }
 
